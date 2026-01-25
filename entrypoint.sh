@@ -1,0 +1,1 @@
+exec gunicorn -c /opt/app-root/aurora/api/config/gunicorn.conf.py aurora.api.application:app

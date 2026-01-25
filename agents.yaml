@@ -1,0 +1,4 @@
+universee:
+  system_prompt: 'aurora/builtins/system_prompt_universe.txt'
+default:
+  system_prompt: 'aurora/builtins/system_prompt.txt'

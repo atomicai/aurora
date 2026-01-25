@@ -1,0 +1,30 @@
+loguru:
+  LOG_FILE_NAME: 'loguru.log'
+  LOG_ROTATION: '22 MB'
+  LOG_RETENTION: '100 days'
+
+llm:
+  LLM_API_KEY: '${LLM_API_KEY}'
+  LLM_API_URL: '${LLM_API_URL}'
+  LLM_MODEL_NAME: '${LLM_MODEL_NAME}'
+  temperature: 0.22
+  max_tokens: 4096
+  top_p: 10
+
+sgi:
+  HOST: "0.0.0.0"
+  PORT: 7777
+  WORKERS_COUNT: 1
+  AUTO_RELOAD: true
+  TIMEOUT: 420
+  WSGI_APP: "aurora.api.application:app"
+  WORKER_CLASS: "uvicorn.workers.UvicornWorker"
+
+telegram:
+  TELEGRAM_BOT_TOKEN: '${TELEGRAM_BOT_TOKEN}'
+  TELEGRAM_BOT_WEBHOOK_URL: '${TELEGRAM_BOT_WEBHOOK_URL}'
+  TELEGRAM_BOT_MODE: '${TELEGRAM_BOT_MODE}'
+  ITEM_ASK_LIMIT: 3
+  edit_interval: 5
+  initial_token_threshold: 32
+  typing_interval: 5

@@ -1,0 +1,9 @@
+rethinkdb==2.4.10.post1
+langchain-openai==1.1.7
+openai==2.15.0
+envyaml==1.10.211231
+polars==1.37.1
+pydantic==2.6.4
+fastapi==0.128.0
+guvicorn==23.0.0
+unicorn==0.40.0
