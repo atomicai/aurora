@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  aurora:
+    build: .
+    container_name: aurora_app
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - .:/app
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - HOST=${HOST}
+      - PORT=${PORT}
+    command: uvicorn main:app --host ${HOST} --port ${PORT}
+    depends_on:
+      - rethinkdb
+  rethinkdb:
+    image: rethinkdb:latest
+    container_name: rethinkdb
+    ports:
+      - "8080:8080"  # RethinkDB web interface
+      - "28015:28015"  # RethinkDB driver port
+    volumes:
+      - rethinkdb_aurora_data:/data
+volumes:
+  rethinkdb_aurora_data:
